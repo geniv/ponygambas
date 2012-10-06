@@ -222,6 +222,6 @@ End
 
 Public Sub ButtonHelp_Click()
 
-  Message.Info(("for detection avr programmer use this cmd: <b>$ tail -f /var/log/syslog</b>\nfor programming cpu use: avr-gcc"))
+  Message.Info(("for detection avr programmer use this cmd: <b>$ tail -f /var/log/syslog</b>\nfor programming cpu use: <b>avr-gcc</b>"))
 
 End

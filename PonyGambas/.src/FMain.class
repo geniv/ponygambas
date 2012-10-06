@@ -155,7 +155,7 @@ Public Sub Form_Resize()
 
 End
 
-'otevreni pro flash
+'otevreni flash
 Public Sub ButtonOpenFlash_Click()
 
   Dialog.Title = ("Select file for load flash")
@@ -187,7 +187,7 @@ Public Sub ButtonOpenEeprom_Click()
 
 End
 
-'ulozeni pro flash
+'ulozeni flash
 Public Sub ButtonSaveFlash_Click()
 
   Dialog.Title = ("Select file for save flash")
