@@ -174,10 +174,13 @@ msgstr ""
 msgid "Select file for save eeprom"
 msgstr ""
 
-#: FMain.class:225
+#: FMain.class:226
 msgid ""
 "for detection avr programmer use this cmd: <b>$ tail -f /var/log/syslog</b>\n"
-"for programming cpu use: <b>avr-gcc</b>"
+"for programming cpu use: <b>avr-gcc</b>\n"
+"\n"
+"Version application: <b>&1</b>\n"
+"\n"
 msgstr ""
 
 #: FSecure.form:12

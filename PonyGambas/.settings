@@ -31,10 +31,9 @@ Geometry=[1,26,210,210]
 [OpenFile]
 File[1]=".src/FMain.form"
 Active=2
-File[2]=".src/FMain.class:193.78"
+File[2]=".src/FMain.class:224.0"
 File[3]=".src/Pony.class:44.43"
-File[4]=".src/FSecure.class:11.32"
-Count=4
+Count=3
 
 [Watches]
 Count=0
