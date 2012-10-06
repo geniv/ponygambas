@@ -3,7 +3,7 @@
 { Form Form
   MoveScaled(0,0,59,50)
   Background = &HC0C0C0&
-  Icon = Picture["ponyprog.ico"]
+  Icon = Picture["PonyProg2000.gif"]
   { PanelFiles Panel
     MoveScaled(1,1,57,6)
     Border = Border.Etched
@@ -103,7 +103,7 @@
     }
     { ButtonHelp ToolButton
       MoveScaled(53,1,3,3)
-      ToolTip = ("Verbose MCU")
+      ToolTip = ("Help")
       Picture = Picture["icon:/small/help"]
     }
   }

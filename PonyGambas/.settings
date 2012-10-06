@@ -29,8 +29,8 @@ Geometry=[-8,18,721,398]
 Geometry=[1,26,210,210]
 
 [OpenFile]
+Active=1
 File[1]=".src/FMain.form"
-Active=2
 File[2]=".src/FMain.class:224.0"
 File[3]=".src/Pony.class:44.43"
 Count=3
