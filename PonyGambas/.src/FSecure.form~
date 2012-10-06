@@ -1,0 +1,26 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,84,43)
+  Text = ("Configuration and Security bits")
+  { ButtonRead Button
+    MoveScaled(22,38,10,4)
+    Text = ("Read")
+  }
+  { ButtonWrite Button
+    MoveScaled(33,38,10,4)
+    Text = ("Write")
+  }
+  { ButtonOk Button
+    MoveScaled(10,38,8,4)
+    Text = ("OK")
+  }
+  { ButtonCancel Button
+    MoveScaled(1,38,8,4)
+    Text = ("Cancel")
+  }
+  { TextArea1 TextArea
+    MoveScaled(3,2,68,34)
+    Text = ("TextArea1")
+  }
+}

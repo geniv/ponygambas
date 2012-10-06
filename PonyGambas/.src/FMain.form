@@ -1,0 +1,130 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,59,50)
+  Background = &HC0C0C0&
+  Icon = Picture["ponyprog.ico"]
+  { PanelFiles Panel
+    MoveScaled(1,1,57,6)
+    Border = Border.Etched
+    { !PartNoComboBox ComboBox
+      MoveScaled(32,1,24,4)
+      #Public = True
+      ReadOnly = True
+      Text = ("Selecet mcu")
+      Sorted = True
+    }
+    { PictureMcu PictureBox
+      MoveScaled(28,1,4,4)
+      Picture = Picture["mcu.png"]
+      Alignment = Align.Center
+    }
+    { ButtonSetting ToolButton
+      MoveScaled(24,1,4,4)
+      ToolTip = ("Settings")
+      Picture = Picture["settings.png"]
+    }
+    { ButtonOpenFlash ToolButton
+      MoveScaled(1,1,4,4)
+      ToolTip = ("Open FLASH")
+      Picture = Picture["openflash.png"]
+    }
+    { ButtonOpenEeprom ToolButton
+      MoveScaled(5,1,4,4)
+      ToolTip = ("Open EEPROM")
+      Picture = Picture["openeeprom.png"]
+    }
+    { ButtonSaveFlash ToolButton
+      MoveScaled(12,1,4,4)
+      ToolTip = ("Save FLASH")
+      Picture = Picture["saveflash.png"]
+    }
+    { ButtonSaveEeprom ToolButton
+      MoveScaled(16,1,4,4)
+      ToolTip = ("Save EEPROM")
+      Picture = Picture["saveeeprom.png"]
+    }
+  }
+  { PanelTools Panel
+    MoveScaled(1,8,57,5)
+    Border = Border.Etched
+    { ButtonReadAll ToolButton
+      MoveScaled(1,1,3,3)
+      Enabled = False
+      ToolTip = ("Read all device")
+      Picture = Picture["readall.png"]
+    }
+    { ButtonReadFlash ToolButton
+      MoveScaled(4,1,3,3)
+      ToolTip = ("Read FLASH")
+      Picture = Picture["readflash.png"]
+    }
+    { ButtonReadEeprom ToolButton
+      MoveScaled(7,1,3,3)
+      ToolTip = ("Read EEPROM")
+      Picture = Picture["readeeprom.png"]
+    }
+    { ButtonWriteAll ToolButton
+      MoveScaled(12,1,3,3)
+      Enabled = False
+      ToolTip = ("Write all device")
+      Picture = Picture["writeall.png"]
+    }
+    { ButtonWriteFlash ToolButton
+      MoveScaled(15,1,3,3)
+      ToolTip = ("Write FLASH")
+      Picture = Picture["writeflash.png"]
+    }
+    { ButtonWriteEeprom ToolButton
+      MoveScaled(18,1,3,3)
+      ToolTip = ("Write EEPROM")
+      Picture = Picture["writeeeprom.png"]
+    }
+    { ButtonErase ToolButton
+      MoveScaled(23,1,3,3)
+      ToolTip = ("Erase device")
+      Picture = Picture["erase.png"]
+    }
+    { ButtonSecureBit ToolButton
+      MoveScaled(27,1,3,3)
+      ToolTip = ("Settings secure bits")
+      Picture = Picture["confsecurebit.png"]
+    }
+    { ButtonSerialNumber ToolButton
+      MoveScaled(31,1,3,3)
+      Enabled = False
+      ToolTip = ("Set serial number")
+      Picture = Picture["setserialnum.png"]
+    }
+    { ButtonVerbose ToolButton
+      MoveScaled(35,1,3,3)
+      ToolTip = ("Verbose MCU")
+      Picture = Picture["icon:/small/info"]
+    }
+    { ButtonHelp ToolButton
+      MoveScaled(53,1,3,3)
+      ToolTip = ("Help")
+      Picture = Picture["icon:/small/help"]
+    }
+  }
+  { TextAreaOutput TextArea
+    MoveScaled(1,14,57,32)
+    Font = Font["Courier New"]
+    ReadOnly = True
+    Border = False
+  }
+  { PanelBottom Panel
+    MoveScaled(0,47,59,3)
+    Border = Border.Etched
+    { LabelFile Label
+      MoveScaled(1,0,24,3)
+      AutoResize = True
+      Text = ("no file")
+    }
+  }
+  { TextAreaOriginal TextArea
+    MoveScaled(9,18,47,27)
+    Visible = False
+    ReadOnly = True
+  }
+}

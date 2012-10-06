@@ -1,0 +1,35 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,28,25)
+  Text = ("Nastaveni")
+  Resizable = False
+  { TextBoxPort TextBox
+    MoveScaled(2,5,24,4)
+    Text = ("/dev/ttyACM0")
+  }
+  { TextBoxProgrammer TextBox
+    MoveScaled(2,14,24,4)
+    Text = ("stk500v2")
+  }
+  { LabelPort Label
+    MoveScaled(2,1,24,4)
+    Text = ("Port:")
+  }
+  { LabelProgrammer Label
+    MoveScaled(2,10,24,4)
+    Text = ("Programmer id:")
+  }
+  { ButtonOk Button
+    MoveScaled(10,20,8,4)
+    Text = ("OK")
+  }
+  { ButtonCancel Button
+    MoveScaled(1,20,8,4)
+    Text = ("Cancel")
+  }
+  { ButtonProbe Button
+    MoveScaled(19,20,8,4)
+    Text = ("Probe")
+  }
+}

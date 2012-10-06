@@ -1,0 +1,13 @@
+' Gambas class file
+
+Public Sub Form_Open()
+
+  TextAreaVerbose.Text = Pony.getBaseShell("-v")
+
+End
+
+Public Sub Form_Resize()
+
+  TextAreaVerbose.Width = FVerbose.Width - 14
+
+End

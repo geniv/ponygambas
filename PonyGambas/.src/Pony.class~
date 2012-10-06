@@ -1,0 +1,112 @@
+' Gambas class file
+
+'overeni existence avrdude
+Static Public Sub ExistsAVRDUDE() As Boolean
+
+  Dim res As String
+
+  Shell "which avrdude" To res
+  Return If(res, True, False)
+
+End
+
+'nacteni portu
+Static Public Sub getPort() As String
+
+  Return Settings["Port", "/dev/ttyACM0"]
+
+End
+
+'nastaveni portu
+Static Public Sub setPort(Port As String)
+
+  Settings["Port"] = Port
+
+End
+
+'nacteni programatoru
+Static Public Sub getProgrammer() As String
+
+  Return Settings["Programmer", "stk500v2"]
+
+End
+
+'nastaveni programatoru
+Static Public Sub setProgrammer(Programmer As String)
+
+  Settings["Programmer"] = Programmer
+
+End
+
+'nacteni part no.
+Static Public Sub getPartNo() As String
+
+  Dim part As String[]
+  'FIZME: osetrit spatnou volbu/nebo zadnou
+  part = Split(FMain.PartNoComboBox.Text, "|")
+  Return Trim(part[0])
+
+End
+
+Static Public Sub getTemp() As String
+
+  Dim res As String
+
+  Shell "echo -n $( tempfile )" To res
+  Return res
+
+End
+
+'provedeni zakladniho shell prikazu
+Static Public Sub getBaseShell(Optional Parametr As String) As String
+
+  Dim res As String
+
+  Dim cmd As String = Subst("avrdude -P &1 -c &2 -p &3 &4 2>&&1", getPort(), getProgrammer(), getPartNo(), Parametr)
+
+  Print cmd
+  Shell cmd Wait To res
+
+  If Not InStr(res, "avrdude: safemode: Fuses OK") Then
+    res = ""
+  Endif
+
+  Return res
+
+End
+
+Static Public Sub getFormatText(Text As String) As String
+
+  Dim row As String
+  Dim r As String
+  Dim result As String
+
+  For Each row In Split(Text, "\n")
+    r = Mid(row, 10)
+    If (Len(r) == 66) Or (Len(r) < 66 And Len(r) > 35) Then
+      result &= Left(r, 32) & "\n" & Mid(r, 33, -2) & "\n"
+    Else If Len(r) == 35 Then
+      result &= Left(r, 32) & "\n"
+    Else
+      result &= Left(r, -3) & "\n"
+    Endif
+  Next
+  Return result
+  ' For Each row In Split(File.Load(Dialog.Path), "\n")
+  '       'Debug row
+  '       r = Mid(row, 10)
+  '       Debug Len(r)
+  '       If Len(r) == 66 Then
+  '         res &= Left(r, 32) & "\n" & Mid(r, 33, -2) & "\n"
+  '       Else If Len(r) < 66 And Len(r) > 35 Then
+  '         res &= Left(r, 32) & "\n" & Mid(r, 33, -2) & "\n"
+  '       Else If Len(r) == 35 Then
+  '         res &= Left(r, 32) & "\n"
+  '       Else
+  '         res &= Left(r, -3) & "\n"
+  '       Endif
+  '       TextAreaOutput.Text = res
+  '
+  '     Next
+
+End

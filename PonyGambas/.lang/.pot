@@ -1,0 +1,249 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2002-11-01 04:27+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .project:1
+msgid "PonyGambas programator"
+msgstr ""
+
+#: .project:2
+msgid "this is fork program PonyProg2000, gui for avrdude"
+msgstr ""
+
+#: FMain.form:41
+msgid "Selecet mcu"
+msgstr ""
+
+#: FMain.form:53
+msgid "Settings"
+msgstr ""
+
+#: FMain.form:59
+msgid "Open FLASH"
+msgstr ""
+
+#: FMain.form:65
+msgid "Open EEPROM"
+msgstr ""
+
+#: FMain.form:71
+msgid "Save FLASH"
+msgstr ""
+
+#: FMain.form:77
+msgid "Save EEPROM"
+msgstr ""
+
+#: FMain.form:89
+msgid "Read all device"
+msgstr ""
+
+#: FMain.form:95
+msgid "Read FLASH"
+msgstr ""
+
+#: FMain.form:101
+msgid "Read EEPROM"
+msgstr ""
+
+#: FMain.form:108
+msgid "Write all device"
+msgstr ""
+
+#: FMain.form:114
+msgid "Write FLASH"
+msgstr ""
+
+#: FMain.form:120
+msgid "Write EEPROM"
+msgstr ""
+
+#: FMain.form:126
+msgid "Erase device"
+msgstr ""
+
+#: FMain.form:132
+msgid "Settings secure bits"
+msgstr ""
+
+#: FMain.form:139
+msgid "Set serial number"
+msgstr ""
+
+#: FMain.form:145
+msgid "Verbose MCU"
+msgstr ""
+
+#: FMain.form:151
+msgid "Help"
+msgstr ""
+
+#: FMain.form:170
+msgid "no file"
+msgstr ""
+
+#: FMain.class:55
+msgid "Read flash complete"
+msgstr ""
+
+#: FMain.class:57
+msgid "Read flash fail"
+msgstr ""
+
+#: FMain.class:61
+msgid "Read from flash"
+msgstr ""
+
+#: FMain.class:76
+msgid "Write flash complete"
+msgstr ""
+
+#: FMain.class:78
+msgid "Write flash fail"
+msgstr ""
+
+#: FMain.class:91
+msgid "Read eeprom complete"
+msgstr ""
+
+#: FMain.class:93
+msgid "Read eeprom fail"
+msgstr ""
+
+#: FMain.class:97
+msgid "Read from eeprom"
+msgstr ""
+
+#: FMain.class:112
+msgid "Write eeprom complete"
+msgstr ""
+
+#: FMain.class:114
+msgid "Write eeprom fail"
+msgstr ""
+
+#: FMain.class:125
+msgid "Erase complete"
+msgstr ""
+
+#: FMain.class:127
+msgid "Erase fail"
+msgstr ""
+
+#: FMain.class:161
+msgid "Select file for load flash"
+msgstr ""
+
+#: FMain.class:162
+msgid "*.hex;*.bin;*.flash"
+msgstr ""
+
+#: FMain.class:162
+msgid "Flash type"
+msgstr ""
+
+#: FMain.class:162
+msgid "All type"
+msgstr ""
+
+#: FMain.class:177
+msgid "Select file for load eeprom"
+msgstr ""
+
+#: FMain.class:178
+msgid "*.eep"
+msgstr ""
+
+#: FMain.class:178
+msgid "Eeprom type"
+msgstr ""
+
+#: FMain.class:193
+msgid "Select file for save flash"
+msgstr ""
+
+#: FMain.class:206
+msgid "Select file for save eeprom"
+msgstr ""
+
+#: FMain.class:225
+msgid ""
+"for detection avr programmer use this cmd: <b>$ tail -f /var/log/syslog</b>\n"
+"for programming cpu use: <b>avr-gcc</b>"
+msgstr ""
+
+#: FSecure.form:12
+msgid "Configuration and Security bits"
+msgstr ""
+
+#: FSecure.form:16
+msgid "Read"
+msgstr ""
+
+#: FSecure.form:21
+msgid "Write"
+msgstr ""
+
+#: FSecure.form:26 FSettings.form:39
+msgid "OK"
+msgstr ""
+
+#: FSecure.form:31 FSettings.form:44
+msgid "Cancel"
+msgstr ""
+
+#: FSecure.class:17
+msgid "Read signature fail"
+msgstr ""
+
+#: FSecure.class:23
+msgid "Read lock fail"
+msgstr ""
+
+#: FSecure.class:29
+msgid "Read calibration fail"
+msgstr ""
+
+#: FSecure.class:35
+msgid "Read fuse fail"
+msgstr ""
+
+#: FSettings.form:14
+msgid "I/O port setup"
+msgstr ""
+
+#: FSettings.form:19
+msgid "/dev/ttyACM0"
+msgstr ""
+
+#: FSettings.form:24
+msgid "stk500v2"
+msgstr ""
+
+#: FSettings.form:29
+msgid "Port:"
+msgstr ""
+
+#: FSettings.form:34
+msgid "Programmer id:"
+msgstr ""
+
+#: FSettings.form:49
+msgid "Probe"
+msgstr ""
+
+#: FSettings.class:7
+msgid "Probe OK!"
+msgstr ""
+
+#: FSettings.class:9
+msgid "Probe Fail!"
+msgstr ""

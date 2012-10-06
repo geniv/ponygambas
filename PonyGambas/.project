@@ -1,0 +1,15 @@
+# Gambas Project File 3.0
+# Compiled with Gambas 3.3.1
+Title=PonyGambas programator
+Startup=FMain
+Version=0.0.3
+Component=gb.image
+Component=gb.gui
+Component=gb.form
+Component=gb.settings
+Description="this is fork program PonyProg2000, gui for avrdude"
+Authors="geniv.radek@gmail.com"
+TabSize=2
+Translate=1
+Language=en
+Packager=1

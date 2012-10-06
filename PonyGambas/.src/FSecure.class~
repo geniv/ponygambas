@@ -1,0 +1,41 @@
+' Gambas class file
+
+Public Sub ButtonCancel_Click()
+
+  Me.Close()
+
+End
+
+Public Sub ButtonRead_Click()
+
+  Dim path As String
+
+  TextArea1.Clear
+  Application.Busy += 1
+  path = Pony.getTemp()
+  If Not Pony.getBaseShell(Subst("-U signature:r:&1:h", path)) Then
+    Message.Error(("Read signature fail"))
+  Endif
+  TextArea1.Text &= "signature: " & File.Load(path)
+
+  path = Pony.getTemp()
+  If Not Pony.getBaseShell(Subst("-U lock:r:&1:h", path)) Then
+    Message.Error(("Read lock fail"))
+  Endif
+  TextArea1.Text &= "lock: " & File.Load(path)
+
+  path = Pony.getTemp()
+  If Not Pony.getBaseShell(Subst("-U calibration:r:&1:h", path)) Then
+    Message.Error(("Read calibration fail"))
+  Endif
+  TextArea1.Text &= "calibration: " & File.Load(path)
+
+  path = Pony.getTemp()
+  If Not Pony.getBaseShell(Subst("-U fuse:r:&1:h", path)) Then
+    Message.Error(("Read fuse fail"))
+  Endif
+  TextArea1.Text &= "fuse: " & File.Load(path)
+
+  Application.Busy -= 1
+
+End

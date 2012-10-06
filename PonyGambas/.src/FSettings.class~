@@ -1,0 +1,34 @@
+' Gambas class file
+
+Public Sub ButtonProbe_Click()
+
+  If Pony.ExistsAVRDUDE() Then
+    If InStr(Pony.getBaseShell(), "avrdude: safemode: Fuses OK") Then
+      Message.Info(("Probe OK!"))
+    Else
+      Message.Error(("Probe Fail!"))
+    Endif
+  Endif
+
+End
+
+Public Sub ButtonCancel_Click()
+
+  Me.Close
+
+End
+
+Public Sub ButtonOk_Click()
+
+  Pony.setPort(TextBoxPort.Text)
+  Pony.setProgrammer(TextBoxProgrammer.Text)
+  Me.Close
+
+End
+
+Public Sub Form_Open()
+
+  TextBoxPort.Text = Pony.getPort()
+  TextBoxProgrammer.Text = Pony.getProgrammer()
+
+End

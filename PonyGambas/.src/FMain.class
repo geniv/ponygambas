@@ -1,0 +1,227 @@
+' Gambas class file
+
+Public Sub _new()
+
+End
+
+'otevreni hlavniho formulare
+Public Sub Form_Open()
+
+  Dim row As String
+
+  For Each row In Split(File.Load("partno"), "\n")
+    PartNoComboBox.add(row)
+  Next
+
+  PartNoComboBox.Text = Settings["PartNo", ("Selecet mcu")]
+
+End
+
+'otvirani okna setting
+Public Sub ButtonSetting_Click()
+
+  FSettings.ShowModal()
+
+End
+
+'otevirani okna secure bits
+Public Sub ButtonSecureBit_Click()
+
+  FSecure.ShowModal()
+
+End
+
+'pri zmene obsahu
+Public Sub PartNoComboBox_Change()
+
+  Settings["PartNo"] = PartNoComboBox.Text
+
+End
+
+'pri kliknuti na select
+Public Sub PartNoComboBox_Click()
+
+  PartNoComboBox_Change
+
+End
+
+'read flash
+Public Sub ButtonReadFlash_Click()
+
+  Dim path As String = Pony.getTemp()
+
+  Application.Busy += 1
+  If Pony.getBaseShell(Subst("-U flash:r:&1:i", path)) Then
+    Message.Info(("Read flash complete"))
+  Else
+    Message.Error(("Read flash fail"))
+  Endif
+  Application.Busy -= 1
+
+  LabelFile.Text = ("Read from flash")
+  TextAreaOriginal.Text = File.Load(path)
+  TextAreaOutput.Text = Pony.getFormatText(TextAreaOriginal.Text)
+
+End
+
+'write flash
+Public Sub ButtonWriteFlash_Click()
+
+  Dim path As String = Pony.getTemp()
+
+  File.Save(path, TextAreaOriginal.Text)
+
+  Application.Busy += 1
+  If Pony.getBaseShell(Subst("-U flash:w:&1:i", path)) Then
+    Message.Info(("Write flash complete"))
+  Else
+    Message.Error(("Write flash fail"))
+  Endif
+  Application.Busy -= 1
+
+End
+
+'read eeprom
+Public Sub ButtonReadEeprom_Click()
+
+  Dim path As String = Pony.getTemp()
+
+  Application.Busy += 1
+  If Pony.getBaseShell(Subst("-U eeprom:r:&1:i", path)) Then
+    Message.Info(("Read eeprom complete"))
+  Else
+    Message.Error(("Read eeprom fail"))
+  Endif
+  Application.Busy -= 1
+
+  LabelFile.Text = ("Read from eeprom")
+  TextAreaOriginal.Text = File.Load(path)
+  TextAreaOutput.Text = Pony.getFormatText(TextAreaOriginal.Text)
+
+End
+
+'write eeprom
+Public Sub ButtonWriteEeprom_Click()
+
+  Dim path As String = Pony.getTemp()
+
+  File.Save(path, TextAreaOriginal.Text)
+
+  Application.Busy += 1
+  If Pony.getBaseShell(Subst("-U eeprom:w:&1:i", path)) Then
+    Message.Info(("Write eeprom complete"))
+  Else
+    Message.Error(("Write eeprom fail"))
+  Endif
+  Application.Busy -= 1
+
+End
+
+'erase
+Public Sub ButtonErase_Click()
+
+  Application.Busy += 1
+  If Pony.getBaseShell("-e") Then
+    Message.Info(("Erase complete"))
+  Else
+    Message.Error(("Erase fail"))
+  Endif
+  Application.Busy -= 1
+
+End
+
+'zmena okna
+Public Sub Form_Resize()
+
+  Dim minHeight As Integer = 402
+  Dim minWidth As Integer = 470
+
+  'min vyska
+  If FMain.Height < minHeight Then
+    FMain.Height = minHeight
+  Endif
+
+  'min sirka
+  If FMain.Width < minWidth Then
+    FMain.Width = minWidth
+  Endif
+
+  PanelFiles.Width = FMain.Width - 14 'roztahovani files panelu
+  PanelTools.Width = FMain.Width - 14 'roztahovani tools panelu
+  TextAreaOutput.Width = FMain.Width - 14 'roztahovani textarea
+  TextAreaOutput.Height = FMain.Height - 145
+  PanelBottom.Top = FMain.Height - 25 'roztahovani a pozice bottom panelu
+  PanelBottom.Width = FMain.Width
+
+End
+
+'otevreni pro flash
+Public Sub ButtonOpenFlash_Click()
+
+  Dialog.Title = ("Select file for load flash")
+  Dialog.Filter = [("*.hex;*.bin;*.flash"), ("Flash type"), "*", ("All type")]
+
+  If Not Dialog.OpenFile() Then
+    TextAreaOriginal.Clear
+    LabelFile.Text = Dialog.Path
+
+    TextAreaOriginal.Text = File.Load(Dialog.Path)
+    TextAreaOutput.Text = Pony.getFormatText(TextAreaOriginal.Text)
+  Endif
+
+End
+
+'otevreni eeprom
+Public Sub ButtonOpenEeprom_Click()
+
+  Dialog.Title = ("Select file for load eeprom")
+  Dialog.Filter = [("*.eep"), ("Eeprom type"), "*", ("All type")]
+
+  If Not Dialog.OpenFile() Then
+    TextAreaOriginal.Clear
+    LabelFile.Text = Dialog.Path
+
+    TextAreaOriginal.Text = File.Load(Dialog.Path)
+    TextAreaOutput.Text = Pony.getFormatText(TextAreaOriginal.Text)
+  Endif
+
+End
+
+'ulozeni pro flash
+Public Sub ButtonSaveFlash_Click()
+
+  Dialog.Title = ("Select file for save flash")
+  Dialog.Filter = [("*.hex;*.bin;*.flash"), ("Flash type"), "*", ("All type")]
+
+  If Not Dialog.SaveFile() Then
+    LabelFile.Text = Dialog.Path
+    File.Save(Dialog.Path, TextAreaOriginal.Text)
+  Endif
+
+End
+
+'ulozeni eeprom
+Public Sub ButtonSaveEeprom_Click()
+
+  Dialog.Title = ("Select file for save eeprom")
+  Dialog.Filter = [("*.eep"), ("Eeprom type"), "*", ("All type")]
+
+  If Not Dialog.SaveFile() Then
+    LabelFile.Text = Dialog.Path
+    File.Save(Dialog.Path, TextAreaOriginal.Text)
+  Endif
+
+End
+
+'verbose mcu
+Public Sub ButtonVerbose_Click()
+
+  FVerbose.ShowModal()
+
+End
+
+Public Sub ButtonHelp_Click()
+
+  Message.Info(("for detection avr programmer use this cmd: <b>$ tail -f /var/log/syslog</b>\nfor programming cpu use: <b>avr-gcc</b>"))
+
+End
