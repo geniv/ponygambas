@@ -1,11 +1,11 @@
 ' Gambas class file
 
 'overeni existence avrdude
-Static Public Sub ExistsAVRDUDE() As Boolean
+Static Public Sub isExistsAVRDUDE() As Boolean
 
   Dim res As String
 
-  Shell "which avrdude" To res
+  Shell "which avrdudeA" To res
   Return If(res, True, False)
 
 End
@@ -42,7 +42,7 @@ End
 Static Public Sub getPartNo() As String
 
   Dim part As String[]
-  'FIZME: osetrit spatnou volbu/nebo zadnou
+  'FIXME: osetrit spatnou volbu/nebo zadnou
   part = Split(FMain.PartNoComboBox.Text, "|")
   Return Trim(part[0])
 

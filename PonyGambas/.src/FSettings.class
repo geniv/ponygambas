@@ -2,12 +2,18 @@
 
 Public Sub ButtonProbe_Click()
 
-  If Pony.ExistsAVRDUDE() Then
-    If InStr(Pony.getBaseShell(), "avrdude: safemode: Fuses OK") Then
-      Message.Info(("Probe OK!"))
+  If Pony.isExistsAVRDUDE() Then 'test existence utility
+    If Exist(Pony.getPort()) Then 'test pripojeni programatoru k portu
+      If InStr(Pony.getBaseShell(), "avrdude: safemode: Fuses OK") Then 'test spustenim utility
+        Message.Info(("Probe OK!"))
+      Else
+        Message.Error(("Probe Fail!"))
+      Endif
     Else
-      Message.Error(("Probe Fail!"))
+      Message.Error(("avrdude is not connected"))
     Endif
+  Else
+    Message.Error(("avrdude is not install"))
   Endif
 
 End

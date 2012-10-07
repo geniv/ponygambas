@@ -42,139 +42,143 @@ msgstr ""
 msgid "Save EEPROM"
 msgstr ""
 
-#: FMain.form:89
-msgid "Read all device"
+#: FMain.form:83
+msgid "Help"
 msgstr ""
 
 #: FMain.form:95
-msgid "Read FLASH"
+msgid "Read all device"
 msgstr ""
 
 #: FMain.form:101
+msgid "Read FLASH"
+msgstr ""
+
+#: FMain.form:107
 msgid "Read EEPROM"
 msgstr ""
 
-#: FMain.form:108
+#: FMain.form:114
 msgid "Write all device"
 msgstr ""
 
-#: FMain.form:114
+#: FMain.form:120
 msgid "Write FLASH"
 msgstr ""
 
-#: FMain.form:120
+#: FMain.form:126
 msgid "Write EEPROM"
 msgstr ""
 
-#: FMain.form:126
+#: FMain.form:132
 msgid "Erase device"
 msgstr ""
 
-#: FMain.form:132
+#: FMain.form:138
 msgid "Settings secure bits"
 msgstr ""
 
-#: FMain.form:139
+#: FMain.form:145
 msgid "Set serial number"
 msgstr ""
 
-#: FMain.form:145
-msgid "Verbose MCU"
-msgstr ""
-
 #: FMain.form:151
-msgid "Help"
+msgid "Verbose MCU"
 msgstr ""
 
 #: FMain.form:170
 msgid "no file"
 msgstr ""
 
-#: FMain.class:55
+#: FMain.class:19 FSettings.class:16
+msgid "avrdude is not install"
+msgstr ""
+
+#: FMain.class:59
 msgid "Read flash complete"
 msgstr ""
 
-#: FMain.class:57
+#: FMain.class:61
 msgid "Read flash fail"
 msgstr ""
 
-#: FMain.class:61
+#: FMain.class:65
 msgid "Read from flash"
 msgstr ""
 
-#: FMain.class:76
+#: FMain.class:80
 msgid "Write flash complete"
 msgstr ""
 
-#: FMain.class:78
+#: FMain.class:82
 msgid "Write flash fail"
 msgstr ""
 
-#: FMain.class:91
+#: FMain.class:95
 msgid "Read eeprom complete"
 msgstr ""
 
-#: FMain.class:93
+#: FMain.class:97
 msgid "Read eeprom fail"
 msgstr ""
 
-#: FMain.class:97
+#: FMain.class:101
 msgid "Read from eeprom"
 msgstr ""
 
-#: FMain.class:112
+#: FMain.class:116
 msgid "Write eeprom complete"
 msgstr ""
 
-#: FMain.class:114
+#: FMain.class:118
 msgid "Write eeprom fail"
 msgstr ""
 
-#: FMain.class:125
+#: FMain.class:129
 msgid "Erase complete"
 msgstr ""
 
-#: FMain.class:127
+#: FMain.class:131
 msgid "Erase fail"
 msgstr ""
 
-#: FMain.class:161
+#: FMain.class:165
 msgid "Select file for load flash"
 msgstr ""
 
-#: FMain.class:162
+#: FMain.class:166
 msgid "*.hex;*.bin;*.flash"
 msgstr ""
 
-#: FMain.class:162
+#: FMain.class:166
 msgid "Flash type"
 msgstr ""
 
-#: FMain.class:162
+#: FMain.class:166
 msgid "All type"
 msgstr ""
 
-#: FMain.class:177
+#: FMain.class:181
 msgid "Select file for load eeprom"
 msgstr ""
 
-#: FMain.class:178
+#: FMain.class:182
 msgid "*.eep"
 msgstr ""
 
-#: FMain.class:178
+#: FMain.class:182
 msgid "Eeprom type"
 msgstr ""
 
-#: FMain.class:193
+#: FMain.class:197
 msgid "Select file for save flash"
 msgstr ""
 
-#: FMain.class:206
+#: FMain.class:210
 msgid "Select file for save eeprom"
 msgstr ""
 
-#: FMain.class:226
+#: FMain.class:230
 msgid ""
 "for detection avr programmer use this cmd: <b>$ tail -f /var/log/syslog</b>\n"
 "for programming cpu use: <b>avr-gcc</b>\n"
@@ -243,10 +247,14 @@ msgstr ""
 msgid "Probe"
 msgstr ""
 
-#: FSettings.class:7
+#: FSettings.class:8
 msgid "Probe OK!"
 msgstr ""
 
-#: FSettings.class:9
+#: FSettings.class:10
 msgid "Probe Fail!"
+msgstr ""
+
+#: FSettings.class:13
+msgid "avrdude is not connected"
 msgstr ""

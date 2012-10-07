@@ -1,7 +1,7 @@
 ' Gambas class file
 
 'overeni existence avrdude
-Static Public Sub ExistsAVRDUDE() As Boolean
+Static Public Sub isExistsAVRDUDE() As Boolean
 
   Dim res As String
 

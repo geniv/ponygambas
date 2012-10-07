@@ -15,6 +15,10 @@ Public Sub Form_Open()
 
   PartNoComboBox.Text = Settings["PartNo", ("Selecet mcu")]
 
+  If Not Pony.isExistsAVRDUDE() Then
+    Message.Error(("avrdude is not install"))
+  Endif
+
 End
 
 'otvirani okna setting
@@ -223,6 +227,6 @@ End
 'help
 Public Sub ButtonHelp_Click()
 
-  Message.Info(Subst(("for detection avr programmer use this cmd: <b>$ tail -f /var/log/syslog</b>\nfor programming cpu use: <b>avr-gcc</b>\n\nVersion application: <b>&1</b>\n\n") & "<a>http://code.google.com/p/ponygambas</a>\n\n* by geniv *\n\nCopyright (c)  2012", Application.Version))
+  Message.Info(Subst(("for detection avr programmer use this cmd: <b>$ tail -f /var/log/syslog</b>\nfor programming cpu use: <b>avr-gcc</b>\n\nVersion application: <b>&1</b>\n\n") & "<a>http://code.google.com/p/ponygambas</a>\n\n* by geniv *\n\nCopyright (c) 2012", Application.Version))
 
 End

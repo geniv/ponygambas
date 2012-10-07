@@ -44,6 +44,11 @@
       ToolTip = ("Save EEPROM")
       Picture = Picture["saveeeprom.png"]
     }
+    { ButtonHelp ToolButton
+      MoveScaled(20,1,4,4)
+      ToolTip = ("Help")
+      Picture = Picture["icon:/small/help"]
+    }
   }
   { PanelTools Panel
     MoveScaled(1,8,57,5)
@@ -100,11 +105,6 @@
       MoveScaled(35,1,3,3)
       ToolTip = ("Verbose MCU")
       Picture = Picture["icon:/small/info"]
-    }
-    { ButtonHelp ToolButton
-      MoveScaled(53,1,3,3)
-      ToolTip = ("Help")
-      Picture = Picture["icon:/small/help"]
     }
   }
   { TextAreaOutput TextArea

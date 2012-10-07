@@ -46,11 +46,19 @@ msgstr ""
 msgid "Probe"
 msgstr ""
 
-#: FSettings.class:7
+#: FSettings.class:8
 msgid "Probe OK!"
 msgstr ""
 
-#: FSettings.class:9
+#: FSettings.class:10
 msgid "Probe Fail!"
+msgstr ""
+
+#: FSettings.class:13
+msgid "avrdude is not connected"
+msgstr ""
+
+#: FSettings.class:16
+msgid "avrdude is not install"
 msgstr ""
 

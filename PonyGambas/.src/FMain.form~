@@ -3,7 +3,7 @@
 { Form Form
   MoveScaled(0,0,59,50)
   Background = &HC0C0C0&
-  Icon = Picture["PonyProg2000.gif"]
+  Icon = Picture["ponyprog.ico"]
   { PanelFiles Panel
     MoveScaled(1,1,57,6)
     Border = Border.Etched
